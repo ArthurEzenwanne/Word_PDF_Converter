@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="4e77dc9b-8dcb-4a3a-9187-6eaa0bffa7ec" solutionId="4e77dc9b-8dcb-4a3a-9187-6eaa0bffa7ec" resetWebServer="false" name="RCR.WF.PDFConverter" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="0eb5d5eb-eb12-43d6-9350-a1364a9bddee" />
+    <featureReference itemId="78027124-3c37-4b91-bc0c-33283848c527" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="e12346a0-f76f-4d79-a1d6-858269d1a5cd" />
+  </projectItems>
+</package>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="PDF Settings" OnQuickLaunch="TRUE" TemplateType="10001" Url="Lists/PDF Settings" Description="PDF Settings List Instance">
+
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">devmode</Field>
+          <Field Name="SettingsCategory">devmode</Field>
+          <Field Name="SettingsValue">true</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">EmailTo</Field>
+          <Field Name="SettingsCategory">EmailTo</Field>
+          <Field Name="SettingsValue">david.liong@rcrtom.com.au</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">EmailFrom</Field>
+          <Field Name="SettingsCategory">EmailFrom</Field>
+          <Field Name="SettingsValue">noreply@rcrtom.com.au</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">SMTPServer</Field>
+          <Field Name="SettingsCategory">SMTPServer</Field>
+          <Field Name="SettingsValue">mail.rcrtom.com.au</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">UseProxy</Field>
+          <Field Name="SettingsCategory">UseProxy</Field>
+          <Field Name="SettingsValue">false</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">UseProxyEmail</Field>
+          <Field Name="SettingsCategory">UseProxyEmail</Field>
+          <Field Name="SettingsValue">false</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">UseTargetLibrary</Field>
+          <Field Name="SettingsCategory">UseTargetLibrary</Field>
+          <Field Name="SettingsValue">false</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Domain</Field>
+          <Field Name="SettingsCategory">Domain</Field>
+          <Field Name="SettingsValue">RCRTom</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">SPLogList</Field>
+          <Field Name="SettingsCategory">SPLogList</Field>
+          <Field Name="SettingsValue">PDF Notification Log</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Word Automation Services Timer Job</Field>
+          <Field Name="SettingsCategory">AutomationServices</Field>
+          <Field Name="SettingsValue">Word Automation Services</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Workflow Delay Duration(minutes)</Field>
+          <Field Name="SettingsCategory">WFDelayTimeOutDuration</Field>
+          <Field Name="SettingsValue">5</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
+ 
+</Elements>

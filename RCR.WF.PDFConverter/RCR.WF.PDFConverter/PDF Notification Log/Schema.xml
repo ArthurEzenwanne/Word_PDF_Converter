@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="PDF Notification Log" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/PDF Notification Log" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/" EnableContentTypes="TRUE">
+  <MetaData>
+    <ContentTypes>
+      <ContentType ID="0x0100e90cc923c4824fc2b099b134ed86af12" Name="ListFieldsContentType">
+        <FieldRefs>
+          <FieldRef ID="{0DA6F121-DFF8-4ABA-9395-935D5AD0C5AB}" Name="DocID" />
+          <FieldRef ID="{86811853-7E52-4515-A88D-A8FA9D450905}" Name="DocFileName" />
+          <FieldRef ID="{83B05773-9E68-49C9-9334-A98AE694AEBB}" Name="PdfFileName" />
+          <FieldRef ID="{40F41DED-F080-47D3-A4C5-E939C8069611}" Name="DescriptionLog" />
+          <FieldRef ID="{1511BF28-A787-4061-B2E1-71F64CC93FD5}" Name="ConvertDate" />
+          <FieldRef ID="{74E525DC-5D72-4B87-8E7E-4743D935BE85}" Name="ConvertStatus" />
+        </FieldRefs>
+      </ContentType>
+      <ContentTypeRef ID="0x01">
+        <Folder TargetName="Item" />
+      </ContentTypeRef>
+      <ContentTypeRef ID="0x0120" />
+    </ContentTypes>
+    <Fields>
+      <Field Name="DocID" Type="Text" DisplayName="Document ID" StaticName="DocID" Required="FALSE" ID="{0DA6F121-DFF8-4ABA-9395-935D5AD0C5AB}" Group="Custom Columns"></Field>
+      <Field ID="{86811853-7E52-4515-A88D-A8FA9D450905}" Name="DocFileName" DisplayName="Document FileName" StaticName="DocFileName" Type="Note" NumLines="10" RichText="FALSE" Sortable="TRUE" Required="FALSE" Group="Custom Columns" />
+      <Field ID="{83B05773-9E68-49C9-9334-A98AE694AEBB}" Name="PdfFileName" DisplayName="PDF FileName" StaticName="PdfFileName" Type="Note" NumLines="10" RichText="FALSE" Sortable="TRUE" Required="FALSE" Group="Custom Columns" />
+      <Field Type="Note" DisplayName="Description Log" Required="FALSE" NumLines="10" RichText="TRUE" RestrictedMode="FALSE" Sortable="FALSE" ID="{40F41DED-F080-47D3-A4C5-E939C8069611}" StaticName="DescriptionLog" Name="DescriptionLog" Group="Custom Columns" />
+      <Field Type="DateTime" DisplayName="Convert Date" Required="FALSE" Format="DateOnly" ID="{1511BF28-A787-4061-B2E1-71F64CC93FD5}" StaticName="ConvertDate" Name="ConvertDate" Group="Custom Columns">
+        <Default>[today]</Default>
+      </Field>
+      <Field Type="Choice" DisplayName="Convert Status" Required="FALSE" ID="{74E525DC-5D72-4B87-8E7E-4743D935BE85}" StaticName="ConvertStatus" Name="ConvertStatus" Group="Custom Columns">
+        <CHOICES>
+          <CHOICE>Failed</CHOICE>
+          <CHOICE>Success</CHOICE>
+          <CHOICE>Warning</CHOICE>
+          <CHOICE>None</CHOICE>
+        </CHOICES>
+        <Default>None</Default>
+      </Field>
+    </Fields>
+    <Views>
+      <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="LinkTitleNoMenu"></FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="Modified" Ascending="FALSE"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View>
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="ID" />
+          <FieldRef Name="DocID" />
+          <FieldRef Name="Attachments"></FieldRef>
+          <FieldRef Name="LinkTitle"></FieldRef>
+          <FieldRef Name="DocFileName" />
+          <FieldRef Name="PdfFileName" />
+          <FieldRef Name="DescriptionLog" />
+          <FieldRef Name="ConvertDate" />
+          <FieldRef Name="ConvertStatus" />
+          <FieldRef Name="Editor" />
+          <FieldRef Name="Modified" />
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="Modified" Ascending="FALSE"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View>
+    </Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

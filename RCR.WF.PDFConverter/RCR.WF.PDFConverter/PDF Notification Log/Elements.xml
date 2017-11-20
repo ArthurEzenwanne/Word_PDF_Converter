@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+   
+  <!-- Do not change the value of the Name attribute below. If it does not match the folder name of the List project item, an error will occur when the project is run. -->
+  <Field
+      Name="DocID"
+      Type="Text"
+      DisplayName="Document ID" StaticName="DocID"
+      Required="FALSE"
+      ID="{0DA6F121-DFF8-4ABA-9395-935D5AD0C5AB}"
+      Group="Custom Columns">
+  </Field>
+  <Field ID="{86811853-7E52-4515-A88D-A8FA9D450905}"
+           Name="DocFileName"
+           DisplayName="Document FileName" StaticName="DocFileName"
+           Type="Note"
+           NumLines="10"
+           RichText="FALSE"
+           Sortable="TRUE"
+           Required="FALSE"
+           Group="Custom Columns"/>
+  <Field ID="{83B05773-9E68-49C9-9334-A98AE694AEBB}"
+         Name="PdfFileName"
+         DisplayName="PDF FileName" StaticName="PdfFileName"
+         Type="Note"
+         NumLines="10"
+         RichText="FALSE"
+         Sortable="TRUE"
+         Required="FALSE"
+         Group="Custom Columns"/>
+  <Field Type="DateTime"
+           DisplayName="Convert Date"
+           Required="FALSE"
+           Format="DateOnly"
+           ID="{1511BF28-A787-4061-B2E1-71F64CC93FD5}"
+           StaticName="ConvertDate" Name="ConvertDate"
+           Group="Custom Columns">
+    <Default>[today]</Default>
+  </Field>
+  <Field Type="Note" DisplayName="Description Log" Required="FALSE"
+       NumLines="10"
+       RichText="TRUE"  RestrictedMode="FALSE"
+       Sortable="FALSE"
+       ID="{40F41DED-F080-47D3-A4C5-E939C8069611}"
+       StaticName="DescriptionLog" Name="DescriptionLog"
+       Group="Custom Columns" />
+  <Field Type="Choice" DisplayName="Convert Status" Required="FALSE" ID="{74E525DC-5D72-4B87-8E7E-4743D935BE85}" StaticName="ConvertStatus" Name="ConvertStatus" Group="Custom Columns">
+    <CHOICES>
+      <CHOICE>Failed</CHOICE>
+      <CHOICE>Success</CHOICE>
+      <CHOICE>Warning</CHOICE>
+      <CHOICE>None</CHOICE>
+    </CHOICES>
+    <Default>None</Default>
+  </Field>
+
+  <ListTemplate
+        Name="PDF Notification Log"
+        Type="10000"
+        BaseType="0"
+        OnQuickLaunch="TRUE"
+        SecurityBits="11"
+        Sequence="410"
+        DisplayName="PDF Notification Log"
+        Description="PDF Log List Definition"
+        Image="/_layouts/images/itgen.png"/>
+</Elements>

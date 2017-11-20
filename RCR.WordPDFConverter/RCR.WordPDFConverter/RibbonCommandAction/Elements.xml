@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+
+  <CustomAction Id="RCRPDFScript"
+				  ScriptSrc="~site/_layouts/RCR.WordPDFConverter/Scripts/pdfconvert.js"
+				  Location="ScriptLink">
+  </CustomAction>
+
+  <CustomAction
+    RegistrationType="ContentType"
+    RegistrationId="0x0101000E29B2A0C4488647A8605FCA085CC6CC"
+    Id="PDFConverter.CustomActions.RibbonCommand"
+    Location="CommandUI.Ribbon.ListView">
+    <CommandUIExtension>
+      <CommandUIDefinitions>
+        <CommandUIDefinition Location="Ribbon.Documents.Manage.Controls._children">
+          <Button Id="PDFConvertRibbonCommand"
+            Alt="Converts Word document to PDF"
+            Description="Converts Word document to PDF"
+            Sequence="25"
+            Command="PDFConversion"
+            Image16by16="/_layouts/RCR.WordPDFConverter/Images/pdf.jpg"
+            Image32by32="/_layouts/RCR.WordPDFConverter/Images/pdf.jpg"
+            LabelText="PDF Conversion"
+            TemplateAlias="o1" />
+        </CommandUIDefinition>
+      </CommandUIDefinitions>
+      <CommandUIHandlers>
+        <CommandUIHandler Command="PDFConversion"
+                          EnabledScript="javascript: SP.ListOperation.Selection.getSelectedItems().length >= 1;"
+                          CommandAction="javascript:
+                              // Get the current ClientContext
+                              this.ctx = new SP.ClientContext.get_current();
+                              
+                              // Get the current Web
+                              var web = this.ctx.get_web();
+                              
+                              // Get the currently selected list
+                              var listId = SP.ListOperation.Selection.getSelectedList();
+                              var sourceList = web.get_lists().getById(listId);
+                              
+                              // Get the selected items and archive each of them
+                              var items = SP.ListOperation.Selection.getSelectedItems(this.ctx);
+                              var item;
+                              var selecteditem = '';
+                              for(var i in items) {
+                                  item = items[i];
+                                  // Get each selected item
+                                  selecteditem = selecteditem + item.id + '|';
+                            }
+                            
+                            //Conver document to PDF
+                             ConvertDocument(listId, selecteditem);" />
+      </CommandUIHandlers>
+    </CommandUIExtension>
+  </CustomAction>
+  
+</Elements>

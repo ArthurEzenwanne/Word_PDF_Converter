@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <!-- Do not change the value of the Name attribute below. If it does not match the folder name of the List project item, an error will occur when the project is run. -->
+  <Field Type="Choice" DisplayName="Settings Category" Required="TRUE" ID="{047CF73D-5C1B-49E2-91E3-61F6642E60AA}" StaticName="SettingsCategory" Name="SettingsCategory" Group="Custom Columns">
+    <CHOICES>
+      <CHOICE>devmode</CHOICE>
+      <CHOICE>UseProxy</CHOICE>
+      <CHOICE>UseProxyEmail</CHOICE>
+      <CHOICE>UseTargetLibrary</CHOICE>
+      <CHOICE>TargetLibraryUrl</CHOICE>
+      <CHOICE>ProxyIP</CHOICE>
+      <CHOICE>ProxyPort</CHOICE>
+      <CHOICE>ProxyUser</CHOICE>
+      <CHOICE>ProxyPassword</CHOICE>
+      <CHOICE>Domain</CHOICE>
+      <CHOICE>SMTPServer</CHOICE>
+      <CHOICE>MailPort</CHOICE>
+      <CHOICE>EmailTo</CHOICE>
+      <CHOICE>EmailFrom</CHOICE>
+      <CHOICE>SPLogList</CHOICE>
+      <CHOICE>AutomationServices</CHOICE>
+      <CHOICE>WFDelayTimeOutDuration</CHOICE>
+    </CHOICES>
+  </Field>
+  <Field
+        Name="SettingsValue"
+        Type="Text"
+        DisplayName="Settings Value" StaticName="SettingsValue"
+        Required="FALSE"
+        ID="{43A17528-C5D4-4663-ADBF-44C03F9B656A}"
+        Group="Custom Columns">
+  </Field>
+  
+    <ListTemplate
+        Name="PDF Settings"
+        Type="10001"
+        BaseType="0"
+        OnQuickLaunch="TRUE"
+        SecurityBits="11"
+        Sequence="410"
+        DisplayName="PDF Settings"
+        Description="PDF Settings List Definition"
+        Image="/_layouts/images/itgen.png"/>
+</Elements>

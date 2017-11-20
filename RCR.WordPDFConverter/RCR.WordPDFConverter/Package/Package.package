@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="3d4f8191-cd81-4efa-979a-c6aa9e382abb" solutionId="3d4f8191-cd81-4efa-979a-c6aa9e382abb" resetWebServer="false" name="RCR.WordPDFConverter" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="a82dbc8b-1f06-480d-b676-f1b3dfd9ecb3" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="8c75b8f8-52b6-4c68-a752-fd58d3e6c7df" />
+  </projectItems>
+</package>

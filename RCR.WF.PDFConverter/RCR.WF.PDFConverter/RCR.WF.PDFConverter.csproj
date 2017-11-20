@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{28B11A4D-4BB1-4127-BF1A-D50F844F1362}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RCR.WF.PDFConverter</RootNamespace>
+    <AssemblyName>RCR.WF.PDFConverter</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Word.Server, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\ISAPI\Microsoft.Office.Word.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.WorkflowActions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\Doc to PDF Converter List\Doc to PDF Converter List.EventReceiver.cs">
+      <DependentUpon>Doc to PDF Converter List.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\LogError.cs" />
+    <Compile Include="Helper\PDFConverterHelper.cs" />
+    <Compile Include="Helper\SharePointHelper.cs" />
+    <Compile Include="PDFConversionProjectHubWorkflow\PDFConversionProjectHubWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDFConversionProjectHubWorkflow\PDFConversionProjectHubWorkflow.Designer.cs">
+      <DependentUpon>PDFConversionProjectHubWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDFConversionWorkflow\PDFConversionWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDFConversionWorkflow\PDFConversionWorkflow.Designer.cs">
+      <DependentUpon>PDFConversionWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\Doc to PDF Converter Workflow\Doc to PDF Converter Workflow.feature">
+      <FeatureId>{0eb5d5eb-eb12-43d6-9350-a1364a9bddee}</FeatureId>
+    </None>
+    <None Include="Features\Doc to PDF Converter List\Doc to PDF Converter List.feature">
+      <FeatureId>{78027124-3c37-4b91-bc0c-33283848c527}</FeatureId>
+    </None>
+    <None Include="Images\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e12346a0-f76f-4d79-a1d6-858269d1a5cd}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Package\Package.package">
+      <PackageId>{4e77dc9b-8dcb-4a3a-9187-6eaa0bffa7ec}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="PDF Notification Log\PDF Notification Log Instance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3ec95071-8b7f-431a-990e-9a1207110506}</SharePointProjectItemId>
+    </None>
+    <None Include="PDF Notification Log\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1ef82bab-e020-425a-8166-da61c45f5c37}</SharePointProjectItemId>
+    </None>
+    <None Include="PDF Settings\PDF Settings Instance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c94503ae-04b9-4ae7-ae74-90dbf9925bce}</SharePointProjectItemId>
+    </None>
+    <None Include="PDF Settings\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{01bc6425-084c-4fa6-8064-2c627224dd7c}</SharePointProjectItemId>
+    </None>
+    <None Include="PDFConversionProjectHubWorkflow\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{cd3552a5-1304-46ed-9251-9ae107db9be8}</SharePointProjectItemId>
+    </None>
+    <None Include="PDFConversionWorkflow\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4dd84ba3-b638-4501-9082-487a19bea911}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\RCR.Framework\RCR.SP.Framework\RCR.SP.Framework.csproj">
+      <Project>{788af7a0-03dd-4a5b-a254-c3e8f9261866}</Project>
+      <Name>RCR.SP.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Features\Doc to PDF Converter Workflow\Doc to PDF Converter Workflow.Template.xml">
+      <DependentUpon>Doc to PDF Converter Workflow.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\Doc to PDF Converter List\Doc to PDF Converter List.Template.xml">
+      <DependentUpon>Doc to PDF Converter List.feature</DependentUpon>
+    </Content>
+    <Content Include="Images\RCR\pdf.gif" />
+    <Content Include="Images\RCR\pdf.jpg" />
+    <Content Include="Images\RCR\RCR-Logo.jpg" />
+    <Content Include="PDF Notification Log\Elements.xml" />
+    <Content Include="PDF Notification Log\PDF Notification Log Instance\Elements.xml" />
+    <Content Include="PDF Notification Log\Schema.xml" />
+    <Content Include="PDF Settings\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="PDF Settings\PDF Settings Instance\Elements.xml" />
+    <Content Include="PDF Settings\Schema.xml" />
+    <Content Include="PDFConversionProjectHubWorkflow\Elements.xml" />
+    <Content Include="PDFConversionWorkflow\Elements.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

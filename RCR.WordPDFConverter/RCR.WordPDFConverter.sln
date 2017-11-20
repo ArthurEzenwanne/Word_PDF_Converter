@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCR.WordPDFConverter", "RCR.WordPDFConverter\RCR.WordPDFConverter.csproj", "{F6B4B1B2-0D39-44F2-9731-76A6F7BDCE5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCR.SP.Framework", "..\RCR.Framework\RCR.SP.Framework\RCR.SP.Framework.csproj", "{788AF7A0-03DD-4A5B-A254-C3E8F9261866}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.webservices.rcrtom.com.au:8080/tfs/dev
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = RCR.WordPDFConverter\\RCR.WordPDFConverter.csproj
+		SccProjectName1 = RCR.WordPDFConverter
+		SccLocalPath1 = RCR.WordPDFConverter
+		SccProjectUniqueName2 = ..\\RCR.Framework\\RCR.SP.Framework\\RCR.SP.Framework.csproj
+		SccProjectName2 = ../../People_Picker/RCR.Framework/RCR.SP.Framework
+		SccLocalPath2 = ..\\RCR.Framework\\RCR.SP.Framework
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6B4B1B2-0D39-44F2-9731-76A6F7BDCE5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6B4B1B2-0D39-44F2-9731-76A6F7BDCE5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6B4B1B2-0D39-44F2-9731-76A6F7BDCE5B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F6B4B1B2-0D39-44F2-9731-76A6F7BDCE5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6B4B1B2-0D39-44F2-9731-76A6F7BDCE5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6B4B1B2-0D39-44F2-9731-76A6F7BDCE5B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{788AF7A0-03DD-4A5B-A254-C3E8F9261866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{788AF7A0-03DD-4A5B-A254-C3E8F9261866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{788AF7A0-03DD-4A5B-A254-C3E8F9261866}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{788AF7A0-03DD-4A5B-A254-C3E8F9261866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{788AF7A0-03DD-4A5B-A254-C3E8F9261866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{788AF7A0-03DD-4A5B-A254-C3E8F9261866}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction Id="RCRPDFScript"
+				  ScriptSrc="~site/_layouts/RCR.WordPDFConverter/Scripts/pdfconvert.js"
+				  Location="ScriptLink">
+  </CustomAction>
+
+  <CustomAction Id="RCRPDFConverter"
+		RegistrationType="FileType"
+		RegistrationId="docx"
+		Location="EditControlBlock"
+		Sequence="106"
+		Title="Convert docx to PDF"
+	    ImageUrl="~site/_layouts/RCR.WordPDFConverter/Images/pdf.gif"
+				  >
+    <UrlAction Url="javascript:RCROpenDialog('{ListId}','{ItemId}');"/>
+  </CustomAction>
+</Elements>
